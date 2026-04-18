@@ -26,7 +26,7 @@ const yfApis = {
 app.get("/", (req, res) => {
   res.send("Hello from the backend!");
 });
-app.get("v1/api/stock", async (req, res) => {
+app.get("/v1/api/stock", async (req, res) => {
   const symbol = req.query.symbol || "AAPL";
   const interval = req.query.interval || "1m";
   const range = req.query.range || "2d";
@@ -36,7 +36,7 @@ app.get("v1/api/stock", async (req, res) => {
   res.json(data);
 });
 
-app.get("v2/api/quick", async (req, res) => {
+app.get("/v2/api/quick", async (req, res) => {
   const batch = req.query.batch || "AAPL,MSFT,GOOGL";
   const fields =
     req.query.fields ||
