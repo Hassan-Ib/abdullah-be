@@ -43,5 +43,8 @@ app.get("v2/api/quick", async (req, res) => {
   console.log(data);
   res.json(data);
 });
+const PORT = process.env.PORT || 5000;
 
-app.listen(5200, () => console.log("Server running on port 5200"));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
