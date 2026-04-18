@@ -23,6 +23,9 @@ const yfApis = {
   ) =>
     `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(batch)}&fields=${fields}`,
 };
+app.get("/", (req, res) => {
+  res.send("Hello from the backend!");
+});
 app.get("v1/api/stock", async (req, res) => {
   const symbol = req.query.symbol || "AAPL";
   const interval = req.query.interval || "1m";
